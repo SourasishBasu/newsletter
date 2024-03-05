@@ -4,10 +4,10 @@ import requests
 
 app = Flask(__name__)
 
-def subscribe_user(email, user_group_email, api_key):
 
-    resp = requests.post(f"https://api.mailgun.net/v3/lists/{user_group_email}/members",
-                         auth=("api", api_key),
+def subscribe_user(email):
+    resp = requests.post(f"https://api.mailgun.net/v3/lists/mlsa.newsletter@{os.environ['MAILING_BASE_URL']}/members",
+                         auth=("api", f"{os.environ['MAILGUN_API_KEY']}"),
                          data={"subscribed": True,
                                "address": email}
                          )
@@ -16,19 +16,19 @@ def subscribe_user(email, user_group_email, api_key):
 
     return resp
 
-
+# route to handle POST request containing email addresses
 @app.route("/", methods=["GET", "POST"])
 def index():
 
     # if user submits the form
     if request.method == "POST":
+
         email = request.form.get('email')
-        subscribe_user(email=email,
-                       user_group_email=f"mlsa.newsletter@{os.environ['MAILGUN_BASE_URL']}",
-                       api_key=os.environ["MAILGUN_API_KEY"])
+
+        subscribe_user(email=email)
 
     return render_template("index.html")
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5001)

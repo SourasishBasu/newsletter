@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    z-index: 1;
+}
+
+@keyframes scaleHeading {
+    0% {
+        font-size: 0; /* Start with font size 0 */
+    }
+    100% {
+        font-size: 4em; /* End with full font size */
+    }
+}
+
+.heading {
+    font-size: 4em;
+    margin-bottom: 1px;
+    animation: scaleHeading 1s forwards; /* Apply animation to scale heading */
+}
+
+.subheading {
+    font-size: 3.5em;
+    margin-top: 1px;
+    margin-bottom: 40px;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.gradient {
+    background: linear-gradient(90deg, #ad5389, #3c1053);
+    background-size: 300%;
+    /* Light to darker purple gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s linear infinite alternate; /* Apply animation to the gradient */
+}
+
+@keyframes fadeInDescription {
+    0% {
+        opacity: 0; /* Start with opacity 0 */
+    }
+    100% {
+        opacity: 1; /* End with full opacity */
+    }
+}
+
+.description {
+    opacity: 0; /* Set initial opacity to 0 */
+    animation: fadeInDescription 2s forwards; /* Apply animation to fade in the description */
+    font-size: 1em;
+    margin-top: 1px;
+    margin-bottom: 10px;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.email-input {
+    width: 300px; /* Subtract the width of the button from the total width */
+    height: 30px;
+    padding: 10px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px 5px 5px 5px; /* Adjust border radius to match input box */
+    background-color: rgba(37, 32, 32, 0.3); /* slightly less darker background */
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+.submit-button {
+    width: calc(100% - 230px);
+    height: calc(100% - 80px); /* Adjust button width as needed */
+    padding: 10px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    background-color: #6f42c1;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px 5px 5px 5px; /* Adjust border radius to match input box */
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+.input-container {
+    position: relative; /* Add relative positioning to the input container */
+    display: inline-block;
+}
+
+.submit-button {
+    position: absolute; /* Add absolute positioning to the submit button */
+    transform: translate(-104%, 13%); /* Center the button vertically */
+}
+
+.submit-button:hover {
+    background-color: #5a3a99;
+}

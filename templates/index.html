@@ -1,79 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        window.onload = function() {
+            document.querySelector('.newsletter-form').addEventListener('submit', function(event) {
+                var email = document.querySelector('.email-input').value;
+                var regex = /^2\d{6,7}@kiit\.ac\.in$/; // Validate email strings starting with 2 followed by 6/7 numbers with KIIT addresses as domain
+                if (!regex.test(email)) {
+                    event.preventDefault();
+                    alert("Incorrect email type");
+                }
+                else {
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title></title>
-
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.min.css"/>
-
-  <!-- Custom fonts -->
-  <link rel="stylesheet" href="../static/vendor/fontawesome-free/css/all.min.css"/>
-
-  <link rel="stylesheet" type="text/css" href="../static/vendor/simple-line-icons/css/simple-line-icons.css"/>
-
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"/>
-
-  <!-- Custom styles for this template -->
-  <link rel="stylesheet" href="../static/css/landing-page.css"/>
-
-
-
+                    var submitButton = document.querySelector('.submit-button');
+                    submitButton.innerHTML = 'Done  <i class="fa-regular fa-circle-check"></i>'; // Show check icon
+                    submitButton.disabled = true; // Disable the button
+                    console.log("Email sent to " + email);
+                    alert("Thanks for subscribing!");
+                    setTimeout(function() {
+                        document.querySelector('.newsletter-form').submit(); // Manually submit the form
+                    }, 1000);
+                }
+            });
+        };
+    </script>
 </head>
-
-<style>
-
-  .features-icons {
-    padding-top: 1rem;
-    padding-bottom: 7rem;}
-
-</style>
-
-
-
-
 <body>
-
-<!-- Call to Action -->
-<section class="call-to-action text-white text-center">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-9 mx-auto">
-        <h2 class="mb-4">Sign up our newsletter for monthly digest. No spam, once a month only</h2>
-      </div>
-      <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-        <form method="POST">
-          <div class="form-row">
-            <div class="col-12 col-md-9 mb-2 mb-md-0">
-              <input type="email" class="form-control form-control-lg" name="email" placeholder="Enter your email...">
-            </div>
-            <div class="col-12 col-md-3">
-              <button type="submit" class="btn btn-block btn-lg btn-primary" id="submit">Tune in!</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- Bootstrap core JavaScript -->
-<script src="../static/vendor/jquery/jquery.min.js"></script>
-
-<script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<script src="../static/alert.js"></script>
-
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="container">
+            <h1 class="heading">MLSA KIIT</h1>
+            <h2 class="subheading"><span class="gradient">Newsletter</span></h2>
+            <p class="description">Want to see some good stuff from the internet?</p>
+            <p class="description">Subscribe to our newsletter and get the best of the internet in your inbox every week!</p>
+            <form method="POST" class="newsletter-form">
+                <div class="input-container"> <!-- New container for input and button -->
+                    <input type="email" class="email-input" name="email" placeholder="Email Address">
+                    <button type="submit" class="submit-button" id="submit">Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </section>
 
 </body>
-
 </html>
