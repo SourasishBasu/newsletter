@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 def subscribe_user(email):
-    resp = requests.post(f"https://api.mailgun.net/v3/lists/mlsa.newsletter@{os.environ['MAILING_BASE_URL']}/members",
+    resp = requests.post(f"https://api.mailgun.net/v3/lists/mlsa.newsletter@{os.environ['MAILGUN_BASE_URL']}/members",
                          auth=("api", f"{os.environ['MAILGUN_API_KEY']}"),
                          data={"subscribed": True,
                                "address": email}
