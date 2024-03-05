@@ -22,8 +22,12 @@ python app.py
 3. <b>Configure Credentials:</b> Add Mailgun credentials as environment variables to the project environment as `MAILGUN_API_KEY` and `MAILGUN_BASE_URL` for the Mailgun API key and Domain URL.
 
 # Usage
-Edit and run the `utils.py` file to send a test email to a recipient. 
+Edit and run the `mailer.py` file to send a test email to the mailing list recipients. 
 
 ### Sending custom emails
 - Add the `html` attribute to the request if you wish to send a custom HTML based email template and add its local file path on the system.
 - Change the name accordingly under `template` attribute if using a custom template from Mailgun Dashboard.
+
+
+![image](https://github.com/SourasishBasu/newsletter-flask/assets/89185962/d25a09ca-0a3f-4330-9644-c3e16d61cc01)
+
