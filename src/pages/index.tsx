@@ -64,7 +64,7 @@ export default function Home() {
             It's fun AND infrequent!
           </CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="h-[100px]">
           <AnimatePresence>
             {formStep === 1 ? (
               <motion.div

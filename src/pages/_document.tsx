@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>MLSAKIIT Newsletter</title>
+        {/* <title>MLSAKIIT Newsletter</title> */}
       </Head>
       <body>
         <Main />

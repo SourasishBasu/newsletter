@@ -10,9 +10,15 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 
+import Head from 'next/head'
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
+    
     <NextThemesProvider attribute="class" defaultTheme="system" enableSystem>
+      <Head>
+        <title>MLSAKIIT Newsletter</title>
+      </Head>
       <div className="min-h-screen">
         <Component {...pageProps} />
         <Toaster />
