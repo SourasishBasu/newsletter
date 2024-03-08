@@ -10,20 +10,20 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 
-import Head from 'next/head'
+import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    
-    <NextThemesProvider attribute="class" defaultTheme="system" enableSystem>
+    <NextThemesProvider attribute="class" defaultTheme="dark">
       <Head>
         <title>MLSAKIIT Newsletter</title>
       </Head>
+
       <div className="min-h-screen">
         <Component {...pageProps} />
         <Toaster />
       </div>
-      <ThemeToggle className="absolute top-6 right-6" />
+      {/* <ThemeToggle className="absolute top-6 right-6" /> */}
       <div className="fixed bottom-0 w-full text-white text-center py-3 flex justify-center space-x-4">
         <a
           href="https://discord.gg/Cn96XCtAmg"

@@ -96,7 +96,7 @@
 }
 
 .button-text {
-  background: linear-gradient(270deg, #cc2b5e, #753a88);
+  background: linear-gradient(270deg, #eecda3, #ef629f );
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
