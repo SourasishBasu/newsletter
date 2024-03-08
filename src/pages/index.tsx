@@ -44,12 +44,32 @@ export default function Home() {
     },
   });
 
+  async function addToList(data: Input) {
+    const response = await fetch("/api/mailing", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: data.email,
+        list: "mlsa.newsletter@newsletter.rycerzes.co",
+      }),
+    });
+
+    if (response.ok) {
+      console.log("Email added to list successfully");
+    } else {
+      console.error("An error occurred");
+    }
+  }
+
   function onSubmit(data: Input) {
     // toast({
     //   title: "",
     //   variant: "default",
     // });
-    // alert(JSON.stringify(data, null, 4));
+    addToList(data);
+    alert(JSON.stringify(data, null, 4));
     console.log(data);
   }
 
@@ -121,6 +141,7 @@ export default function Home() {
 
                               if (!isValid) return;
 
+                              form.handleSubmit(onSubmit)();
                               setFormStep(1);
                               setShowCard(true);
                             }}

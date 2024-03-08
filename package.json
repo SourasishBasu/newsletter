@@ -1,13 +1,6 @@
 {
   "name": "mlsa-newslette",
   "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
@@ -19,6 +12,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.4",
     "@tabler/icons-react": "^2.47.0",
+    "@types/mailgun-js": "^0.22.18",
     "@types/node": "20.3.3",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
@@ -29,8 +23,8 @@
     "eslint-config-next": "13.4.7",
     "framer-motion": "^11.0.8",
     "install": "^0.13.0",
-    "lottie-react": "^2.4.0",
     "lucide-react": "^0.257.0",
+    "mailgun-js": "^0.22.0",
     "next": "13.4.7",
     "next-themes": "^0.2.1",
     "postcss": "8.4.24",
@@ -45,7 +39,11 @@
     "typescript": "5.1.6",
     "zod": "^3.21.4"
   },
-  "devDependencies": {
-    "@types/react-lottie": "^1.2.10"
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   }
 }
