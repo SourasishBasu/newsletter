@@ -29,6 +29,7 @@ import { cn } from "@/lib/utils";
 // import { ArrowRight } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import Image from 'next/image'
 
 const inter = Inter({ subsets: ["latin"] });
 type Input = z.infer<typeof registerSchema>;
@@ -77,10 +78,12 @@ export default function Home() {
     <main>
       <BackgroundBeams />
       <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-        <img
+        <Image
           src="/mlsa.png"
           alt="Card image"
-          className="mx-auto w-[150px] h-[150px]"
+          className="mx-auto"
+          width={150}
+          height={150}
         />
         <Card className="w-[400px] h-[325px] bg-transparent border-transparent">
           <CardHeader>
@@ -90,7 +93,7 @@ export default function Home() {
             <CardDescription className="text-center">
               Join our monthly newsletter!
               <br />
-              It's fun AND infrequent!
+              It&apos;s fun AND infrequent!
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -166,7 +169,7 @@ export default function Home() {
                             Thank you for registering!
                             <br />
                             Every Monday, we send people an email that contains
-                            anything we've made that week — but more
+                            anything we&apos;ve made that week — but more
                             importantly: other good stuff we found on the
                             internet...
                           </CardContent>
@@ -186,7 +189,7 @@ export default function Home() {
           </CardHeader>
           <CardContent>
             <ul className="list-disc list-inside">
-              <li>8th March 2024: We are ballin'</li>
+              <li>8th March 2024: We are ballin&apos;</li>
             </ul>
           </CardContent>
         </Card>
