@@ -14,9 +14,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const mg = MailGun.client({
       username: "api",
-      key: process.env.MAILGUN_API_KEY,
+      key: process.env.MAILGUN_API_KEY || "",
     });
-    const DOMAIN = process.env.MAILGUN_DOMAIN;
+    const DOMAIN = process.env.MAILGUN_DOMAIN || "";
     const MAILING_LIST = list;
     const EMAIL_TO_ADD = email;
 
