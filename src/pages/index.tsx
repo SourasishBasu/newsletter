@@ -189,7 +189,7 @@ export default function Home() {
           </CardHeader>
           <CardContent>
             <ul className="list-disc list-inside">
-              <li>8th March 2024: We are ballin&apos;</li>
+              <li>18th March 2024: Coming soon!</li>
             </ul>
           </CardContent>
         </Card>
