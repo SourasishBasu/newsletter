@@ -24,7 +24,7 @@
     "framer-motion": "^11.0.8",
     "install": "^0.13.0",
     "lucide-react": "^0.257.0",
-    "mailgun-js": "^0.22.0",
+    "mailgun.js": "^10.2.1",
     "next": "13.4.7",
     "next-themes": "^0.2.1",
     "postcss": "8.4.24",

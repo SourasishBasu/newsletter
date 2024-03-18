@@ -53,7 +53,7 @@ export default function Home() {
       },
       body: JSON.stringify({
         email: data.email,
-        list: "mlsa.newsletter@newsletter.rycerzes.co",
+        list: "newsletter@mailgun.mlsakiit.com",
       }),
     });
 
