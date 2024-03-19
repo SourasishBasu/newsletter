@@ -168,7 +168,7 @@ export default function Home() {
                           <CardContent className="mt-5">
                             Thank you for registering!
                             <br />
-                            Every Monday, we send people an email that contains
+                            Every month, we send people an email that contains
                             anything we&apos;ve made that week — but more
                             importantly: other good stuff we found on the
                             internet...
@@ -182,7 +182,7 @@ export default function Home() {
             </Form>
           </CardContent>
         </Card>
-        <Card className="border-transparent bg-transparent">
+        {/* <Card className="border-transparent bg-transparent">
           <CardHeader className="">
             <CardTitle>Latest Issue</CardTitle>
             <CardDescription></CardDescription>
@@ -192,7 +192,7 @@ export default function Home() {
               <li>18th March 2024: Coming soon!</li>
             </ul>
           </CardContent>
-        </Card>
+        </Card> */}
       </div>
     </main>
   );
